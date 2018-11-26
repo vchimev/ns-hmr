@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <Page.actionBar>
+        <ActionBar title="Second">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout>
+        <TextField text="Second"></TextField>
+    </StackLayout>
+</Page>

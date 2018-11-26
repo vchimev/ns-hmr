@@ -1,4 +1,5 @@
-import { Observable } from "tns-core-modules/data/observable";
+import { EventData, View } from 'tns-core-modules/ui/core/view';
+import { Observable } from 'tns-core-modules/data/observable';
 
 export class HelloWorldModel extends Observable {
 
@@ -24,9 +25,14 @@ export class HelloWorldModel extends Observable {
         }
     }
 
-    public onTap() {
+    public onTap(args: EventData) {
         this._counter--;
         this.updateMessage();
+
+        const view = args.object as View;
+        const page = view.page;
+        const frame = page.frame;
+        frame.navigate("second-page");
     }
 
     private updateMessage() {
