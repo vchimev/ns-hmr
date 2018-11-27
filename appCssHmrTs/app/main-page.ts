@@ -1,4 +1,4 @@
-import { EventData } from 'tns-core-modules/data/observable';
+import { EventData, View } from 'tns-core-modules/ui/core/view';
 import { HelloWorldModel } from './main-view-model';
 import { Page } from 'tns-core-modules/ui/page';
 /*
@@ -14,8 +14,8 @@ export function navigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-    let page = <Page>args.object;
-    
+    const view = args.object as View;
+    const page = view.page;
     /*
     A page’s bindingContext is an object that should be used to perform
     data binding between XML markup and TypeScript code. Properties
@@ -29,4 +29,12 @@ export function navigatingTo(args: EventData) {
     page.bindingContext = new HelloWorldModel();
 
     console.log("Navigating to Main Page ...");
+}
+
+export function navigatedFrom(args: EventData) {
+    console.log("Navigated from Second Page ...");
+    const view = args.object as View;
+    const page = view.page;
+    const frame = page.frame;
+    frame._onCssStateChange();
 }

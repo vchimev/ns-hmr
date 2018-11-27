@@ -162,16 +162,15 @@ module.exports = env => {
                     use: "nativescript-dev-webpack/script-hot-loader"
                 },
 
-                {
-                    test: /app\.(css|scss)$/,
-                    use: "nativescript-dev-webpack/hot-loaders/app-style-hot-loader"
-                },
-
                 // {
-                //     // TODO: exclude `app`
-                //     test: /\.(css|scss)$/,
-                //     use: "nativescript-dev-webpack/style-hot-loader"
+                //     test: /app\.(css|scss)$/,
+                //     use: "nativescript-dev-webpack/hot-loaders/app-style-hot-loader"
                 // },
+
+                {
+                    test: /\.(css|scss)$/,
+                    use: "nativescript-dev-webpack/style-hot-loader"
+                },
 
                 {
                     test: /\.(html|xml)$/,
