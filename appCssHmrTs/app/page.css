@@ -1,0 +1,9 @@
+﻿/* @import '~nativescript-theme-core/css/core.light.css';
+
+.btn {
+    font-size: 18;
+} */
+
+TextField {
+    background-color: orange;
+}

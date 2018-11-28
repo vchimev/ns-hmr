@@ -1,11 +1,14 @@
 import { EventData, View } from 'tns-core-modules/ui/core/view';
 import { HelloWorldModel } from './main-view-model';
-import { Page } from 'tns-core-modules/ui/page';
+import { loadCss } from 'tns-core-modules/ui/styling/style-scope';
+
 /*
 In NativeScript, a file with the same name as an XML file is known as
 a code-behind file. The code-behind is a great place to place your view
 logic, and to set up your page’s data binding.
 */
+
+const newCss = "./page.css";
 
 // Event handler for Page "navigatingTo" event attached in main-page.xml
 export function navigatingTo(args: EventData) {
@@ -28,13 +31,14 @@ export function navigatingTo(args: EventData) {
     */
     page.bindingContext = new HelloWorldModel();
 
+    // loadCss(newCss);
     console.log("Navigating to Main Page ...");
 }
 
-export function navigatedFrom(args: EventData) {
-    console.log("Navigated from Second Page ...");
-    const view = args.object as View;
-    const page = view.page;
-    const frame = page.frame;
-    frame._onCssStateChange();
-}
+// export function navigatedFrom(args: EventData) {
+//     console.log("Navigated from Second Page ...");
+//     const view = args.object as View;
+//     const page = view.page;
+//     const frame = page.frame;
+//     frame._onCssStateChange();
+// }
