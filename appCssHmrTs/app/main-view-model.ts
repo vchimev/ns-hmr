@@ -1,8 +1,5 @@
 import { EventData, View } from 'tns-core-modules/ui/core/view';
-import { loadCss } from 'tns-core-modules/ui/styling/style-scope';
 import { Observable } from 'tns-core-modules/data/observable';
-
-const newCss = "./page.css";
 
 export class HelloWorldModel extends Observable {
 
@@ -28,7 +25,7 @@ export class HelloWorldModel extends Observable {
         }
     }
 
-    public onTap(args: EventData) {
+    public onTapSecond(args: EventData) {
         this._counter--;
         this.updateMessage();
 
@@ -36,18 +33,16 @@ export class HelloWorldModel extends Observable {
         const page = view.page;
         const frame = page.frame;
         frame.navigate("second-page");
-        // this.livesyncStyles(frame);
     }
 
-    public onTop(args: EventData) {
+    public onTapThird(args: EventData) {
         this._counter--;
         this.updateMessage();
 
-        // const view = args.object as View;
-        // const page = view.page;
-        // const frame = page.frame;
-        // frame.navigate("second-page");
-        loadCss(newCss);
+        const view = args.object as View;
+        const page = view.page;
+        const frame = page.frame;
+        frame.navigate("third-page");
     }
 
     private updateMessage() {

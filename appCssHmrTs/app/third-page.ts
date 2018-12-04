@@ -4,5 +4,5 @@ export function onNav(args: EventData) {
     const view = args.object as View;
     const page = view.page;
     const frame = page.frame;
-    frame.navigate("second-page");
+    frame.navigate("third-page");
 }
