@@ -1,13 +1,12 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
     <Page.actionBar>
-        <ActionBar title="Second">
+        <ActionBar title="Forth">
         </ActionBar>
     </Page.actionBar>
 
     <StackLayout>
-        <TextField text="Second"></TextField>
+        <TextField text="Forth"></TextField>
         <Button text="TAP" tap="onNav" class="btn btn-primary btn-active"/>
-        <Button text="TAP4" tap="onNav" class="btn btn-primary btn-active"/>
     </StackLayout>
 
 </Page>
